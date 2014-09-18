@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     PACIENTE."NOMBRE" AS PACIENTE_NOMBRE,
+     PACIENTE."APELLIDO" AS PACIENTE_APELLIDO,
+     FICHAMEDICA."PRESION" AS FICHAMEDICA_PRESION,
+     FICHAMEDICA."PESO" AS FICHAMEDICA_PESO,
+     FICHAMEDICA."TEMPERATURA" AS FICHAMEDICA_TEMPERATURA,
+     FICHAMEDICA."TALLA" AS FICHAMEDICA_TALLA
+FROM
+     "ADMINISTRADOR"."PACIENTE" PACIENTE,
+     "ADMINISTRADOR"."FICHAMEDICA" FICHAMEDICA]]>
+	</queryString>
+	<field name="PACIENTE_NOMBRE" class="java.lang.String"/>
+	<field name="PACIENTE_APELLIDO" class="java.lang.String"/>
+	<field name="FICHAMEDICA_PRESION" class="java.math.BigDecimal"/>
+	<field name="FICHAMEDICA_PESO" class="java.lang.Integer"/>
+	<field name="FICHAMEDICA_TEMPERATURA" class="java.math.BigDecimal"/>
+	<field name="FICHAMEDICA_TALLA" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="248" y="19" width="283" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Reporte de Signos Vitales]]></text>
+			</staticText>
+			<image>
+				<reportElement x="656" y="6" width="105" height="60"/>
+				<imageExpression><![CDATA["C:\\Users\\YALITZA DEMERA\\Desktop\\estetoscopio.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="28" y="2" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="2" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="2" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PRESION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="2" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PESO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="542" y="2" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TEMPERATURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="678" y="2" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TALLA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PACIENTE_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="12" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PACIENTE_APELLIDO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FICHAMEDICA_PRESION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FICHAMEDICA_PESO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="542" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FICHAMEDICA_TEMPERATURA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="678" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FICHAMEDICA_TALLA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="24" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="15" splitType="Stretch"/>
+	</summary>
+</jasperReport>
